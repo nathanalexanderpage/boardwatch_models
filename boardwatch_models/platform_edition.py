@@ -9,3 +9,4 @@ class PlatformEdition():
 		self.has_gloss = has_gloss
 		self.note = note
 		self.image_url = image_url
+		self.colors = colors

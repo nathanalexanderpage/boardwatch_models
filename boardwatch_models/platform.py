@@ -10,4 +10,4 @@ class Platform():
         self.description = description
         self.disambiguation = disambiguation
         self.relevance = relevance
-        self.editions = []
+        self.editions = editions

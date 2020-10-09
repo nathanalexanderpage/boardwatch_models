@@ -1,12 +1,12 @@
 class Board():
 	boards = []
 
-	def __init__(self, id, name, url, is_scraping_supported, listings=[]):
+	def __init__(self, id, name, url, is_scraping_supported):
 		self.id = id
 		self.name = name
 		self.url = url
 		self.is_scraping_supported = is_scraping_supported
-		self.listings = listings
+		self.listings = list()
 		Board.boards.append(self)
 
 	def summary(self):

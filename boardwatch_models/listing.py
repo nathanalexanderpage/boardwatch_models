@@ -1,5 +1,5 @@
 class Listing():
-	listings = []
+	registry = {}
 
 	def __init__(self, id, native_id, title, body, url, seller_email, seller_phone, date_posted, date_scraped):
 		self.id = id
@@ -11,5 +11,7 @@ class Listing():
 		self.seller_phone = seller_phone
 		self.date_posted = date_posted
 		self.date_scraped = date_scraped
-		Listing.listings.append(self)
-		
+		self.add_to_registry()
+
+	def add_to_registry(self):
+		Listing.registry[self.id] = self

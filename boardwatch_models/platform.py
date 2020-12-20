@@ -17,6 +17,13 @@ class Platform():
 	def add_to_registry(self):
 		Platform.registry[self.id] = self
 
+	def add_edition(self, edition):
+		if edition.id not in self.editions:
+			self.editions[edition.id] = edition
+
+	def get_all_editions(self):
+		return self.editions.values()
+
 	@classmethod
 	def get_by_id(cls, platform_id):
 		return cls.registry[platform_id]

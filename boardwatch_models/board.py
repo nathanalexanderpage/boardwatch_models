@@ -11,6 +11,14 @@ class Board():
 
 	def add_to_registry(self):
 		Board.registry[self.id] = self
+		
+	def add_listing(self, listing):
+		if listing.id not in self.listings:
+			self.listings[listing.id] = listing
+
+	def get_all_listings(self):
+		return self.listings.values()
+
 
 	def summary(self):
 		print('id: ' + str(self.id))

@@ -9,6 +9,14 @@ class PlatformNameGroup():
 
 	def add_to_registry(self):
 		PlatformNameGroup.registry[self.id] = self
+		
+	def add_platform(self, platform):
+		if platform.id not in self.platforms:
+			self.platforms[platform.id] = platform
+
+	def get_all_platforms(self):
+		return self.platforms.values()
+
 
 	@classmethod
 	def get_by_id(cls, platform_name_group_id):

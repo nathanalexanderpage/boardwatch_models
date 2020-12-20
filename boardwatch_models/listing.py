@@ -11,7 +11,6 @@ class Listing():
 		self.seller_phone = seller_phone
 		self.date_posted = date_posted
 		self.date_scraped = date_scraped
-		self.add_to_registry()
 
 	def add_to_registry(self):
 		Listing.registry[self.id] = self

@@ -6,7 +6,7 @@ class Board():
 		self.name = name
 		self.url = url
 		self.is_scraping_supported = is_scraping_supported
-		self.listings = list()
+		self.listings = dict()
 		self.add_to_registry()
 
 	def add_to_registry(self):

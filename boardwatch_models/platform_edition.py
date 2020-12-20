@@ -14,3 +14,11 @@ class PlatformEdition():
 
 	def add_to_registry(self):
 		PlatformEdition.registry[self.id] = self
+
+	@classmethod
+	def get_by_id(cls, platform_edition_id):
+		return cls.registry[platform_edition_id]
+
+	@classmethod
+	def get_all(cls):
+		return cls.registry.values()

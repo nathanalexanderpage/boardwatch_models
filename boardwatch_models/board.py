@@ -17,3 +17,11 @@ class Board():
 		print('name: ' + self.name)
 		print('url: ' + self.url)
 		print('is_scraping_supported: ' + str(self.is_scraping_supported))
+
+	@classmethod
+	def get_by_id(cls, board_id):
+		return cls.registry[board_id]
+
+	@classmethod
+	def get_all(cls):
+		return cls.registry.values()

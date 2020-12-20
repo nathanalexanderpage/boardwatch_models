@@ -9,3 +9,11 @@ class PlatformNameGroup():
 
 	def add_to_registry(self):
 		PlatformNameGroup.registry[self.id] = self
+
+	@classmethod
+	def get_by_id(cls, platform_name_group_id):
+		return cls.registry[platform_name_group_id]
+
+	@classmethod
+	def get_all(cls):
+		return cls.registry.values()

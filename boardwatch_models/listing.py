@@ -14,3 +14,11 @@ class Listing():
 
 	def add_to_registry(self):
 		Listing.registry[self.id] = self
+
+	@classmethod
+	def get_by_id(cls, listing_id):
+		return cls.registry[listing_id]
+
+	@classmethod
+	def get_all(cls):
+		return cls.registry.values()

@@ -1,5 +1,5 @@
 class Platform():
-	registry = {}
+	registry = dict()
 
 	def __init__(self, id, name, is_brand_missing_from_name, platform_family_id, platform_family_name, model_no, storage_capacity, description, disambiguation, relevance):
 		self.id = id
@@ -16,3 +16,11 @@ class Platform():
 
 	def add_to_registry(self):
 		Platform.registry[self.id] = self
+
+	@classmethod
+	def get_by_id(cls, platform_id):
+		return cls.registry[platform_id]
+
+	@classmethod
+	def get_all(cls):
+		return cls.registry.values()

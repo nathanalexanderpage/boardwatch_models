@@ -1,4 +1,6 @@
 class PlatformEdition():
+	registry = {}
+
 	def __init__(self, id, name, official_color, has_matte, has_transparency, has_gloss, note, image_url):
 		self.id = id
 		self.name = name
@@ -9,3 +11,6 @@ class PlatformEdition():
 		self.note = note
 		self.image_url = image_url
 		self.colors = list()
+
+	def add_to_registry(self):
+		PlatformEdition.registry[self.id] = self

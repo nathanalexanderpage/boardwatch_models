@@ -1,5 +1,5 @@
 class Board():
-    registry = {}
+	registry = {}
 
 	def __init__(self, id, name, url, is_scraping_supported):
 		self.id = id

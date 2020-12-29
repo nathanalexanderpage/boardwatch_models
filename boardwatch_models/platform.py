@@ -29,5 +29,13 @@ class Platform():
 		return cls.registry[platform_id]
 
 	@classmethod
+	def get_by_edition_id(cls, edition_id):
+		for platform in cls.get_all():
+			for edition in platform.editions:
+				if edition == edition_id:
+					return platform
+		raise Exception()
+
+	@classmethod
 	def get_all(cls):
 		return cls.registry.values()

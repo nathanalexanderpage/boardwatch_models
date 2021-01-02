@@ -17,10 +17,9 @@ class PlatformNameGroup():
 	def get_all_platforms(self):
 		return self.platforms.values()
 
-
 	@classmethod
 	def get_by_id(cls, platform_name_group_id):
-		return cls.registry[platform_name_group_id]
+		return cls.registry.get(platform_name_group_id)
 
 	@classmethod
 	def get_all(cls):

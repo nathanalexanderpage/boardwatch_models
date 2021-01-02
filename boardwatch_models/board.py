@@ -19,7 +19,6 @@ class Board():
 	def get_all_listings(self):
 		return self.listings.values()
 
-
 	def summary(self):
 		print('id: ' + str(self.id))
 		print('name: ' + self.name)
@@ -28,7 +27,7 @@ class Board():
 
 	@classmethod
 	def get_by_id(cls, board_id):
-		return cls.registry[board_id]
+		return cls.registry.get(board_id)
 
 	@classmethod
 	def get_all(cls):

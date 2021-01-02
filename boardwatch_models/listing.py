@@ -16,7 +16,7 @@ class Listing():
 
 	@classmethod
 	def get_by_id(cls, listing_id):
-		return cls.registry[listing_id]
+		return cls.registry.get(listing_id)
 
 	@classmethod
 	def get_all(cls):

@@ -14,7 +14,7 @@ class User():
 
 	@classmethod
 	def get_by_id(cls, user_id):
-		return cls.registry[user_id]
+		return cls.registry.get(user_id)
 
 	@classmethod
 	def get_all(cls):

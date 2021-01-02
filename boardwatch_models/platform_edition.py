@@ -17,7 +17,7 @@ class PlatformEdition():
 
 	@classmethod
 	def get_by_id(cls, platform_edition_id):
-		return cls.registry[platform_edition_id]
+		return cls.registry.get(platform_edition_id)
 
 	@classmethod
 	def get_all(cls):

@@ -12,7 +12,7 @@ class Game():
 
 	@classmethod
 	def get_by_id(cls, game_id):
-		return cls.registry[game_id]
+		return cls.registry.get(game_id)
 
 	@classmethod
 	def get_all(cls):

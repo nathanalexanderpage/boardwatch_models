@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="boardwatch-models",
-    version="0.12.0",
+    version="0.13.0",
     author="Nathan Alexander Page",
     author_email="nathanalexanderpage@gmail.com",
     description="Model classes for larger Boardwatch product",

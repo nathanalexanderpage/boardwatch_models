@@ -15,6 +15,30 @@ class PlatformEdition():
 	def add_to_registry(self):
 		PlatformEdition.registry[self.id] = self
 
+	def referencial_name(self):
+		referencial_name = None
+
+		if self.name:
+			if self.official_color:
+				referencial_name = f"""{self.name}: {self.official_color}"""
+			elif len(self.colors) > 0:
+				referencial_name = f"""{self.name} ({', '.join(self.colors)})"""
+		elif self.official_color:
+			referencial_name = self.official_color
+		elif len(self.colors) > 0:
+			referencial_name = ', '.join(self.colors)
+		elif self.has_matte:
+			referencial_name = 'matte'
+		elif self.has_transparency:
+			referencial_name = 'transparency'
+		elif self.has_gloss:
+			referencial_name = 'gloss'
+
+		if referencial_name is None:
+			raise Exception()
+		
+		return referencial_name
+
 	@classmethod
 	def get_by_id(cls, platform_edition_id):
 		return cls.registry.get(platform_edition_id)

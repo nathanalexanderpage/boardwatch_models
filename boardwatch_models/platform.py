@@ -24,6 +24,25 @@ class Platform():
 	def get_all_editions(self):
 		return self.editions.values()
 
+	def get_all_editions_jsonified(self):
+		jsonified_editions = []
+		for edn in self.editions:
+			jsonified_editions.append(edn.jsonify())
+		return jsonified_editions
+
+	def jsonify(self):
+		return {
+			'id': self.id,
+			'name': self.name,
+			'is_brand_missing_from_name': self.is_brand_missing_from_name,
+			'model_no': self.model_no,
+			'storage_capacity': self.storage_capacity,
+			'description': self.description,
+			'disambiguation': self.disambiguation,
+			'relevance': self.relevance,
+			'editions': self.get_all_editions_jsonified()
+		}
+
 	@classmethod
 	def get_by_id(cls, platform_id):
 		return cls.registry.get(platform_id)

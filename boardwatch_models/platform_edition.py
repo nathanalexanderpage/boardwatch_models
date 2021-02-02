@@ -39,6 +39,19 @@ class PlatformEdition():
 		
 		return referencial_name
 
+	def jsonify(self):
+		return {
+			'id': self.id,
+			'name': self.name,
+			'official_color': self.official_color,
+			'has_matte': self.has_matte,
+			'has_transparency': self.has_transparency,
+			'has_gloss': self.has_gloss,
+			'note': self.note,
+			'image_url': self.image_url,
+			'colors': [*self.colors]
+		}
+
 	@classmethod
 	def get_by_id(cls, platform_edition_id):
 		return cls.registry.get(platform_edition_id)
